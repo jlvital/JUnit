@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jose.daw</groupId>
+	<artifactId>JUnit.Aritmetica</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>JUnit.Aritmetica</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<JUnit.Aritmetica-finalName>aritmetica</JUnit.Aritmetica-finalName>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>20</java.version> <!-- Actualizado de la 1.8 a la 20 -->
+		<maven.compiler.source>20</maven.compiler.source> <!-- Añadido
+		manualmente -->
+		<maven.compiler.target>20</maven.compiler.target> <!-- Añadido
+		manualmente -->
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<junit.jupiter.version>5.10.1</junit.jupiter.version> <!-- Actualizado
+		desde Maven Repository -->
+		<junit.platform.version>1.0.2</junit.platform.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>JUnit.Aritmetica</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<target>${java.version}</target>
+					<source>${java.version}</source>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
