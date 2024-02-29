@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-
 public class SubscripcionTest {
 
 	private Subscripcion subs;
@@ -23,17 +22,26 @@ public class SubscripcionTest {
 	}
 
 	@Test
-	void testPrecioMensualSubscripcion() {
+	void testPrecioMensual() {
 		assertEquals(subs.precioPorMes(), 100);
-		
-		subs = new Subscripcion (209, 5);
+	}
+
+	@Test
+	void testPrecioNoEntero() {
+		subs = new Subscripcion(209, 5);
 		assertEquals(42.8, subs.precioPorMes());
+	}
 
-		subs = new Subscripcion(0, -12);
-		assertEquals(0, subs.precioPorMes());
-
+	@Test
+	void testPrecioNegativo() {
 		subs = new Subscripcion(-1000, 3);
 		assertEquals(0, subs.precioPorMes(), 1);
+	}
+
+	@Test
+	void testPeriodoNoValido() {
+		subs = new Subscripcion(0, -12);
+		assertEquals(0, subs.precioPorMes());
 	}
 
 	@Test
