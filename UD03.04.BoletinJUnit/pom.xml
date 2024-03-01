@@ -10,7 +10,8 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>JUnit.BoletinJUnit</name>
-    <!-- FIXME change it to the project's website -->
+    <!-- FIXME change it to the project's website -->    
+
     <url>http://www.example.com</url>
 
     <properties>
@@ -38,40 +39,32 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+			
         </dependency>
-        <dependency> <!-- Añadido manualmente. Para hacer más legibles los test -->
+        <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
             <version>${hamcrest.library}</version>
             <scope>test</scope>
         </dependency>
-        <!-- Se añade la siguiente dependencia para realizar test parametrizados -->
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-runner</artifactId>
             <version>${junit.platform.version}</version>
+            <scope>test</scope>
+    
         </dependency>
-        <!-- Esta dependencia nos permite definir varios casos de prueba que
-        para un mismo método, que será ESTÁTICO-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-
     </dependencies>
 
     <build>
-        <finalName>JUnit.Persona</finalName>
+        <finalName>JUnit.Persona</finalName>     
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
